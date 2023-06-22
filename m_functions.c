@@ -10,7 +10,7 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	
+
 	(void)line_number;
 	temp = malloc(sizeof(stack_t));
 	if (temp == NULL)
@@ -62,8 +62,6 @@ void(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 		empty_stack();
-	
-
-
-
+	pritnf("%d\n", (*stack)->n);
 }
+

@@ -33,5 +33,5 @@ void argument_error(void)
 
 void file_error(char **argv)
 {
-	fprint(stderr, "Error: Can't open file %s\n",argv[1])
+	fprintf(stderr, "Error: Can't open file %s\n",argv[1]);
 }

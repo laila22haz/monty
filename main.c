@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 
 	if (file == NULL)
 	{
-		file_error();
+		file_error(argv);
 	}
 	if (argc != 2)
 	{
