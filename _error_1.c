@@ -25,3 +25,13 @@ void malloc_error(void)
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);
 }
+void argument_error(void)
+{
+	fprintf(stderr, "USAGE: monty file\n");
+	exit(EXIT_FAILURE);
+}
+
+void file_error(char **argv)
+{
+	fprint(stderr, "Error: Can't open file %s\n",argv[1])
+}

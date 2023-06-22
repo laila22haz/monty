@@ -10,7 +10,6 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-
 	
 	(void)line_number;
 	temp = malloc(sizeof(stack_t));
@@ -51,4 +50,20 @@ void _pall(stack_t **stack, unsigned int line_number)
 		printf("%d", ptr->n);
 		ptr = ptr->next;
 	}
+}
+/**
+ * _pint - fuction that prints the value at the top of the stack
+ * @stack: the fierst argument
+ * @line_number: the second argument
+ *
+ * Return: VOID
+ */
+void(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+		empty_stack();
+	
+
+
+
 }

@@ -52,9 +52,11 @@ typedef struct instruction_s
 
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-void _hundale_push(unsigned int line);
 
 /** error functions **/
 void malloc_error(void);
+void argument_error(void);
+void _hundale_push(unsigned int line);
+void file_error(char **argv);
 
 #endif

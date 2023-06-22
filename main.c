@@ -22,19 +22,29 @@ int main(int argc, char **argv)
 	};
 	FILE *file = fopen(argv[1], "r");
 
-	(void)argc;
+	if (file == NULL)
+	{
+		file_error();
+	}
+	if (argc != 2)
+	{
+		argument_error();
+	}
 	read = getline(&line_ptr, &n, file);
 	while(read != EOF)
 	{
 		for (counter = 0; array[counter].opcode != NULL; counter++)
 		{
+
 			token = strtok(line_ptr, "\n\t ");
 			if (strcmp(token, array[counter].opcode) == 0)
-				return (array[counter].f);
+			{
+				(array[counter].f(NULL,0));
+				break;
+			}
 		}
 	}
 	free(line_ptr);
 	fclose(file);
 	return (0) ;
-
 }
