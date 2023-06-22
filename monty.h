@@ -53,12 +53,21 @@ typedef struct instruction_s
 int execute(int argc, char **argv);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
 
 /** error functions **/
 void malloc_error(void);
 void argument_error(void);
 void _hundale_push(unsigned int line);
 void file_error(char **argv);
+void error_pop(unsigned int line);
+void error_swap(unsigned int line);
+void error_add(unsigned int line);
+void empty_stack(unsigned int line);
 
 /** help functions **/
 int check_int(char *str);

@@ -15,11 +15,16 @@ int execute(int argc, char **argv)
 	size_t n = 0;
 	char *token;
 	char cmd[1024];
-	char *_Line = 1;
+	int _Line = 1;
 	instruction_t array [] =
 	{
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 	FILE *file = fopen(argv[1], "r");
@@ -36,12 +41,12 @@ int execute(int argc, char **argv)
 			token = strtok(line_ptr, "\n\t ");
 			if (token == NULL)
 				continue;
-			strcopy(cmd, token);
+			strcpy(cmd, token);
 			if (strcmp(token, "push") == 0)
 			{
 				token = strtok(NULL, "\n\t ");
 				if (check_int(token) == 1)
-					handel_error(_Line);
+					_hundale_push(_Line);
 				num = atoi(token);
 			}
 			else if (strcmp(token, array[counter].opcode) == 0)

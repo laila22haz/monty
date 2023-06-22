@@ -58,10 +58,11 @@ void _pall(stack_t **stack, unsigned int line_number)
  *
  * Return: VOID
  */
-void(stack_t **stack, unsigned int line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
-	if (*stack == NULL)
-		empty_stack();
-	pritnf("%d\n", (*stack)->n);
+	if (stack == NULL || *stack == NULL)
+		empty_stack(line_number);
+	printf("%d\n", (*stack)->n);
+
 }
 
