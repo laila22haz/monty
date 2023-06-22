@@ -22,3 +22,19 @@ int check_int(char *str)
 	}
 	return (0);
 }
+/**
+ * free_stack - fuction that frees our stack
+ * @stack: first argument
+ * Return: VOID
+ */
+void free_stack(stack_t *stack)
+{
+	stack_t *temp;
+
+	while (stack != NULL)
+	{
+		stack = temp;
+		stack = stack->next;
+		free(temp);
+	}
+}

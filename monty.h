@@ -60,6 +60,7 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 
 /** error functions **/
+
 void malloc_error(void);
 void argument_error(void);
 void _hundale_push(unsigned int line);
@@ -70,7 +71,8 @@ void error_add(unsigned int line);
 void empty_stack(unsigned int line);
 
 /** help functions **/
-int check_int(char *str);
 
+int check_int(char *str);
+void free_stack(stack_t *stack);
 
 #endif
