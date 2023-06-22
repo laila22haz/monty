@@ -9,7 +9,20 @@
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp = NULL;
 	if (*stack == NULL)
+		error_pop(line_number);
+	if ((*stack)->next == NULL)
 	{
+		free(*stack);
+		*stack = NULL;
+	}
+	else
+	{
+		tmp = *stack;
+		((*stack)->next)->prev = NULL;
+		(*stack) = (*stack)->next;
+		free(tmp);
+	}
 
 }
