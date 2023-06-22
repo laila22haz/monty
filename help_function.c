@@ -33,7 +33,7 @@ void free_stack(stack_t *stack)
 
 	while (stack != NULL)
 	{
-		stack = temp;
+		temp= stack;
 		stack = stack->next;
 		free(temp);
 	}
