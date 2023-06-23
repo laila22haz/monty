@@ -27,14 +27,16 @@ int check_int(char *str)
  * @stack: first argument
  * Return: VOID
  */
-void free_stack(stack_t *stack)
+void free_stack(stack_t **stack)
 {
-	stack_t *temp;
+stack_t *curr = *stack;
+	stack_t *tmp;
 
-	while (stack != NULL)
+	while (curr != NULL)
 	{
-		temp= stack;
-		stack = stack->next;
-		free(temp);
+		tmp = curr;
+		curr = curr->next;
+		free(tmp);
 	}
+	*stack = NULL;
 }

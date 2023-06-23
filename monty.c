@@ -1,6 +1,9 @@
 #include "monty.h"
+int num;
 int main(int argc, char **argv)
 {
-	return execute(argc, argv);
+	if (argc != 2)
+		argument_error();
+	return execute(argv);
 	
 }

@@ -7,7 +7,7 @@
  *
  * Return: integer
  */
-int execute(int argc, char **argv)
+int execute(char **argv)
 {
 	int counter;
 	int read;
@@ -16,6 +16,7 @@ int execute(int argc, char **argv)
 	char *token;
 	char cmd[1024];
 	int _Line = 1;
+	stack_t *stack = NULL;
 	instruction_t array [] =
 	{
 		{"push", _push},
@@ -31,9 +32,12 @@ int execute(int argc, char **argv)
 
 	if (file == NULL)
 		file_error(argv);
-	if (argc != 2)
-		argument_error();
 	read = getline(&line_ptr, &n, file);
+	if (read == -1)
+		{
+			free(line_ptr);
+			exit(EXIT_SUCCESS);
+		}
 	while(read != EOF)
 	{
 		for (counter = 0; array[counter].opcode != NULL; counter++)
@@ -42,7 +46,7 @@ int execute(int argc, char **argv)
 			if (token == NULL)
 				continue;
 			strcpy(cmd, token);
-			if (strcmp(token, "push") == 0)
+			if (strcmp(cmd, "push") == 0)
 			{
 				token = strtok(NULL, "\n\t ");
 				if (check_int(token) == 1)
@@ -51,12 +55,17 @@ int execute(int argc, char **argv)
 			}
 			else if (strcmp(token, array[counter].opcode) == 0)
 			{
-				(array[counter].f(NULL,0));
+				(array[counter].f(&stack,0));
 				break;
 			}
 		}
+		read = getline(&line_ptr, &n, file);
 	}
-	free(line_ptr);
 	fclose(file);
+	if (line_ptr != NULL)
+		free(line_ptr);
+	free_stack(&stack);
+	
+	
 	return (0) ;
 }

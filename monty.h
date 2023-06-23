@@ -50,7 +50,7 @@ typedef struct instruction_s
 
 /** Functions Prototype **/
 
-int execute(int argc, char **argv);
+int execute(char **argv);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
@@ -73,6 +73,6 @@ void empty_stack(unsigned int line);
 /** help functions **/
 
 int check_int(char *str);
-void free_stack(stack_t *stack);
+void free_stack(stack_t **stack);
 
 #endif
