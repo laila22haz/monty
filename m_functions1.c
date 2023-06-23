@@ -10,6 +10,7 @@
 void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
+
 	if (*stack == NULL)
 		error_pop(line_number);
 	if ((*stack)->next == NULL)
@@ -35,6 +36,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 void _swap(stack_t **stack, unsigned int line_number)
 {
 	int a;
+
 	if (*stack == NULL || ((*stack)->next) == NULL)
 		error_swap(line_number);
 	a = (*stack)->n;
@@ -56,9 +58,9 @@ void _add(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || ((*stack)->next) == NULL)
 		error_add(line_number);
 	result = (*stack)->n + ((*stack)->next)->n;
-	_pop(stack,line_number);
+	_pop(stack, line_number);
 	(*stack)->n = result;
-	
+
 }
 
 /**

@@ -12,7 +12,7 @@
 #include <ctype.h>
 
 /** extern variable **/
-extern int num;
+int num;
 
 
 /** Structs **/

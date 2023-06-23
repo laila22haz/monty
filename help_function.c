@@ -1,6 +1,6 @@
 #include "monty.h"
 
-/** 
+/**
  * check_int - fuction that check integer
  * @str: first argument
  *
@@ -10,7 +10,7 @@ int check_int(char *str)
 {
 	int i = 0;
 
-    	if (str == NULL)
+	if (str == NULL)
 		return (1);
 	if (str[i] == '-')
 		i++;
