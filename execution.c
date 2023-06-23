@@ -31,20 +31,24 @@ int execute(char **argv)
 	FILE *file = fopen(argv[1], "r");
 
 	if (file == NULL)
+	{
 		file_error(argv);
+	}
 	read = getline(&line_ptr, &n, file);
 	if (read == -1)
 		{
 			free(line_ptr);
 			exit(EXIT_SUCCESS);
 		}
-	while(read != EOF)
+	while(read != -1)
 	{
 		for (counter = 0; array[counter].opcode != NULL; counter++)
 		{
 			token = strtok(line_ptr, "\n\t ");
 			if (token == NULL)
+			{
 				continue;
+			}
 			strcpy(cmd, token);
 			if (strcmp(cmd, "push") == 0)
 			{
@@ -52,6 +56,8 @@ int execute(char **argv)
 				if (check_int(token) == 1)
 					_hundale_push(_Line);
 				num = atoi(token);
+				(array[counter].f(&stack,0));
+				break;
 			}
 			else if (strcmp(token, array[counter].opcode) == 0)
 			{

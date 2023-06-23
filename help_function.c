@@ -8,9 +8,11 @@
  */
 int check_int(char *str)
 {
-    int i = 0;
+	int i = 0;
 
-	if (str[0] == '-')
+    	if (str == NULL)
+		return (1);
+	if (str[i] == '-')
 		i++;
 	while (str[i] != '\0')
 	{
