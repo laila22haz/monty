@@ -10,7 +10,6 @@
 int execute(char **argv)
 {
 	int counter;
-	int read;
 	char *line_ptr = NULL;
 	size_t n = 0;
 	char *token;
@@ -34,14 +33,9 @@ int execute(char **argv)
 	{
 		file_error(argv);
 	}
-	read = getline(&line_ptr, &n, file);
-	if (read == -1)
-		{
-			free(line_ptr);
-			exit(EXIT_SUCCESS);
-		}
-	while(read != -1)
+	while((getline(&line_ptr, &n, file)) != -1)
 	{
+		_Line++;
 		for (counter = 0; array[counter].opcode != NULL; counter++)
 		{
 			token = strtok(line_ptr, "\n\t ");
@@ -56,16 +50,20 @@ int execute(char **argv)
 				if (check_int(token) == 1)
 					_hundale_push(_Line);
 				num = atoi(token);
-				(array[counter].f(&stack,0));
+				(array[counter].f(&stack, _Line));
 				break;
 			}
 			else if (strcmp(token, array[counter].opcode) == 0)
 			{
-				(array[counter].f(&stack,0));
+				(array[counter].f(&stack, _Line));
 				break;
 			}
 		}
-		read = getline(&line_ptr, &n, file);
+		if (array[counter].opcode == NULL)
+		{
+			fprintf (stderr, "L%u: unknown instruction %s\n", _Line, token);
+			exit(EXIT_FAILURE);
+		}
 	}
 	fclose(file);
 	if (line_ptr != NULL)
