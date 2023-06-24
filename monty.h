@@ -12,7 +12,7 @@
 #include <ctype.h>
 
 /** extern variable **/
-int num;
+extern int num;
 
 
 /** Structs **/
@@ -50,7 +50,7 @@ typedef struct instruction_s
 
 /** Functions Prototype **/
 
-int execute(char **argv);
+void execute(char **argv);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
@@ -69,6 +69,7 @@ void error_pop(unsigned int line);
 void error_swap(unsigned int line);
 void error_add(unsigned int line);
 void empty_stack(unsigned int line);
+void error_unknown(int line, char *token);
 
 /** help functions **/
 

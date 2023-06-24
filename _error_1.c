@@ -45,3 +45,15 @@ void file_error(char **argv)
 	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 	exit(EXIT_FAILURE);
 }
+/**
+ * error_unknown - Prints an error message for an unknown instruction.
+ * @line: The line number where the error occurred.
+ * @token: The token representing the unknown instruction.
+ *
+ * Return: None.
+ */
+void error_unknown(int line, char *token)
+{
+	fprintf(stderr, "L%u: unknown instruction %s\n", line, token);
+	exit(EXIT_FAILURE);
+}
