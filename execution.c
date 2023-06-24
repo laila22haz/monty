@@ -13,7 +13,7 @@ void execute(char **argv)
 	stack_t *stack = NULL;
 	instruction_t array[] = {
 		{"push", _push}, {"pall", _pall}, {"pint", _pint}, {"pop", _pop},
-		{"swap", _swap}, {"add", _add}, {"nop", _nop}, {NULL, NULL}};
+		{"swap", _swap}, {"add", _add}, {"nop", _nop}, {"sub", _sub}, {NULL, NULL}};
 	FILE *file = fopen(argv[1], "r");
 
 	if (file == NULL)

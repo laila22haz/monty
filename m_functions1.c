@@ -75,3 +75,19 @@ void _nop(stack_t **stack, unsigned int line_number)
 	(void)stack;
 	(void)line_number;
 }
+/**
+ * _sub - substracts the top element of the stack from the second.
+ * @stack: linked list's head address.
+ * @line_number: line number from file.
+ * Return: VOID
+ */
+void _sub(stack_t **stack, unsigned int line_number)
+{
+	int result = 0;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		error_sub(line_number);
+	result = (((*stack)->next)->n) - ((*stack)->n);
+	_pop(stack, line_number);
+	(*stack)->n = result;
+}
