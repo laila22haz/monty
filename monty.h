@@ -67,7 +67,7 @@ void argument_error(void);
 void _hundale_push(unsigned int line);
 void file_error(char **argv);
 void error_pop(unsigned int line);
-void error_swap(unsigned int line);
+void error_swap(unsigned int line, stack_t **stack);
 void error_add(unsigned int line);
 void empty_stack(unsigned int line);
 void error_unknown(int line, char *token);
