@@ -60,6 +60,7 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
 
 /** error functions **/
 
@@ -75,6 +76,7 @@ void error_unknown(int line, char *token);
 void error_sub(unsigned int line);
 void error_div(unsigned int line);
 void error_div_zero(unsigned int line);
+void error_mul(unsigned int line);
 
 
 /** help functions **/

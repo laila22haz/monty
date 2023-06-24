@@ -88,3 +88,20 @@ void _div(stack_t **stack, unsigned int line_number)
 	(*stack)->n = div;
 }
 
+/**
+ * _mul - multiplies the second top element of the stack with the top element.
+ * @stack: first argument
+ * @line_number: the second argument
+ * Return: VOID
+ */
+void _mul(stack_t **stack, unsigned int line_number)
+{
+	int mul = 0;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		error_mul(line_number);
+	mul = (((*stack)->next)->n) * ((*stack)->n);
+	_pop(stack, line_number);
+	(*stack)->n = mul;
+}
+
