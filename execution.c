@@ -11,9 +11,9 @@ void execute(char **argv)
 	size_t n = 0;
 	char *line_ptr = NULL, *token;
 	stack_t *stack = NULL;
-	instruction_t array[] = {
-		{"push", _push}, {"pall", _pall}, {"pint", _pint}, {"pop", _pop},
-		{"swap", _swap}, {"add", _add}, {"nop", _nop}, {"sub", _sub}, {NULL, NULL}};
+	instruction_t array[] = {{"push", _push}, {"pall", _pall}, {"pint", _pint},
+	{"pop", _pop}, {"div", _div}, {"swap", _swap}, {"add", _add}, {"nop", _nop},
+	{"sub", _sub}, {NULL, NULL}};
 	FILE *file = fopen(argv[1], "r");
 
 	if (file == NULL)
