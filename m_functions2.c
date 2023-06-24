@@ -19,3 +19,23 @@ void _mod(stack_t **stack, unsigned int line_number)
 	_pop(stack, line_number);
 	(*stack)->n = mod;
 }
+/**
+ * _pchar - prints the char at the top of the stack.
+ * @stack: linked list's stack address.
+ * @line_number: line number from file.
+ * Return: nothing
+ */
+void _pchar(stack_t **stack, unsigned int line_number)
+{
+	int a;
+
+	if (*stack == NULL)
+		error_pchar(line_number);
+
+	a = (*stack)->n;
+
+	if (!(a >= 32 && a <= 126))
+		error_pchar_range(line_number);
+	putchar(a);
+	putchar('\n');
+}

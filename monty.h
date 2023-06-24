@@ -62,6 +62,7 @@ void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 
 /** error functions **/
 
@@ -79,11 +80,15 @@ void error_div(unsigned int line);
 void error_div_zero(unsigned int line);
 void error_mul(unsigned int line);
 void error_mod(unsigned int line);
+void error_pchar(unsigned int line);
+void error_pchar_range(unsigned int line);
+
 
 
 /** help functions **/
 
 int check_int(char *str);
 void free_stack(stack_t **stack);
+
 
 #endif
