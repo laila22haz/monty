@@ -39,3 +39,24 @@ void _pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+/**
+ * _pstr -  prints the string starting at the top of the stack
+ * @stack: linked list's stack address
+ * @line_number: line number from file.
+ * Return: nothing
+*/
+void _pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = (*stack);
+	(void) line_number;
+
+	while (temp)
+	{
+		if (temp->n <= 0 || temp->n > 127)
+			break;
+		printf("%c", temp->n);
+		temp = temp->next;
+	}
+	printf("\n");
+}
+

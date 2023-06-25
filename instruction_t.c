@@ -19,6 +19,7 @@ instruction_t *_instructions(void)
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 	return (array);
