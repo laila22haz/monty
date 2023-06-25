@@ -27,19 +27,15 @@ void _mod(stack_t **stack, unsigned int line_number)
  */
 void _pchar(stack_t **stack, unsigned int line_number)
 {
-	int a;
-
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	a = (*stack)->n;
-	if (!(a >= 32 && a <= 126))
+	if ((*stack)->n < 0 || (*stack)->n > 127)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	putchar(a);
-	putchar('\n');
+	printf("%c\n", (*stack)->n);
 }
