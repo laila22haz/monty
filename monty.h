@@ -77,8 +77,6 @@ void error_div(unsigned int line);
 void error_div_zero(unsigned int line);
 void error_mul(unsigned int line);
 void error_mod(unsigned int line);
-void error_pchar(unsigned int line);
-void error_pchar_range(unsigned int line);
 
 
 
