@@ -65,7 +65,6 @@ void _pint(stack_t **stack, unsigned int line_number)
 	if (stack == NULL || *stack == NULL)
 		empty_stack(line_number);
 	printf("%d\n", (*stack)->n);
-		
 }
 /**
  * _div - divides the second top element of the stack by the top element.

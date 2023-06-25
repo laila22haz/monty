@@ -71,7 +71,6 @@ void argument_error(void);
 void _hundale_push(unsigned int line);
 void file_error(char **argv);
 void error_pop(unsigned int line);
-void error_swap(unsigned int line, stack_t **stack);
 void error_add(unsigned int line);
 void empty_stack(unsigned int line);
 void error_unknown(int line, char *token);
@@ -86,7 +85,7 @@ void error_pchar_range(unsigned int line);
 
 
 /** help functions **/
-
+instruction_t *_instructions(void);
 int check_int(char *str);
 void free_stack(stack_t **stack);
 

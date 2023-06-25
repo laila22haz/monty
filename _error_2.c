@@ -10,18 +10,6 @@ void error_pop(unsigned int line)
 	exit(EXIT_FAILURE);
 }
 /**
- * error_swap - Prints an error message and exits the program
- * @line: The line number where the error occurred
- * @stack: second parameter
- * Return: void
- */
-void error_swap(unsigned int line, stack_t **stack)
-{
-	fprintf(stderr, "L%u:  can't swap, stack too short\n", line);
-	free_stack(stack);
-	exit(EXIT_FAILURE);
-}
-/**
  * error_add - Prints an error message and exits the program
  * @line: The line number where the error occurred
  * Return: void
