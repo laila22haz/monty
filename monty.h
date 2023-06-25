@@ -73,7 +73,6 @@ void file_error(char **argv);
 void error_pop(unsigned int line);
 void error_add(unsigned int line);
 void error_unknown(int line, char *token);
-void error_sub(unsigned int line);
 void error_div(unsigned int line);
 void error_div_zero(unsigned int line);
 void error_mul(unsigned int line);
