@@ -62,12 +62,10 @@ void _pall(stack_t **stack, unsigned int line_number)
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
-
-	if (tmp != NULL)
-		printf("%d\n", tmp->n);
-	else
+	if (stack == NULL || *stack == NULL)
 		empty_stack(line_number);
+	printf("%d\n", (*stack)->n);
+		
 }
 /**
  * _div - divides the second top element of the stack by the top element.
