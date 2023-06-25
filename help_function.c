@@ -25,6 +25,22 @@ int check_int(char *str)
 	return (0);
 }
 /**
+ * check_comment - Checks if the given argument is a comment.
+ * @arg: The argument to be checked.
+ * @i: The value of i.
+ *
+ * Return: 1 if the argument is a comment, 2 otherwise.
+ */
+int check_comment(char *arg, int i)
+{
+	if (arg == NULL || arg[0] == '#')
+	{
+		i++;
+		return (1);
+	}
+	return (2);
+}
+/**
  * free_stack - fuction that frees our stack
  * @stack: first argument
  * Return: VOID

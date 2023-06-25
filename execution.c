@@ -21,7 +21,7 @@ void execute(char **argv)
 	while (getline(&line_ptr, &n, file) != -1)
 	{
 		token = strtok(line_ptr, "\n\t ");
-		if (token == NULL)
+		if (check_comment(token, _Line) == 1)
 			continue;
 		for (counter = 0; array[counter].opcode != NULL; counter++)
 		{

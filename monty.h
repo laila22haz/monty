@@ -83,6 +83,7 @@ void error_mod(unsigned int line);
 /** help functions **/
 instruction_t *_instructions(void);
 int check_int(char *str);
+int check_comment(char *arg, int i);
 void free_stack(stack_t **stack);
 
 
