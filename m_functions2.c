@@ -59,4 +59,28 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	}
 	printf("\n");
 }
+/**
+ * _rotl - Rotates the stack to the top, moving the top element to the bottom
+ * @stack: Double pointer to the stack
+ * @line_number: The line number of the script file being executed
+ */
+void _rotl(stack_t **stack, unsigned int line_number)
+{
+	int num;
+	stack_t *temp, *new_node;
 
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	num = (*stack)->n;
+	_pop(stack, line_number);
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+		malloc_error();
+	new_node->n = num;
+	new_node->next = NULL;
+	temp = *stack;
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = new_node;
+	new_node->prev = temp;
+}
