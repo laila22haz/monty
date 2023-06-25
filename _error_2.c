@@ -20,17 +20,6 @@ void error_add(unsigned int line)
 	exit(EXIT_FAILURE);
 }
 /**
- * empty_stack - Prints an error message and exits the program
- * @line: The line number where the error occurred
- * Return: void
- */
-void empty_stack(unsigned int line)
-{
-	fprintf(stderr, "L%u:  can't pint, stack empty\n", line);
-	exit(EXIT_FAILURE);
-
-}
-/**
  * error_sub - Prints an error message and exits the program
  * @line: The line number where the error occurred
  * Return: void
