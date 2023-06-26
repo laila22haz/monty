@@ -101,9 +101,8 @@ void _rotr(stack_t **stack, unsigned int line_number)
 	while (temp->next != NULL)
 	{
 		temp = temp->next;
-		temp->next = new_node;
-		new_node->prev = temp;
-		new_node->next = NULL;
 	}
-
+	temp->next = new_node;
+	new_node->prev = temp;
+	new_node->next = NULL;
 }
