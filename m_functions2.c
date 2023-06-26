@@ -91,11 +91,13 @@ void _rotl(stack_t **stack, unsigned int line_number)
 */
 void _rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack, *new_node = *stack;
+	stack_t *temp, *new_node;
 	(void) line_number;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
+	temp = *stack;
+	new_node = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	while (temp->next != NULL)
