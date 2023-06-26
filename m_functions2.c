@@ -84,3 +84,26 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	temp->next = new_node;
 	new_node->prev = temp;
 }
+/**
+ * _rotr - fuction that rotates the stack to the bottom
+ * @stack: Double pointer to the stack
+ * @line_number: The line number of the script file being executed
+*/
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = *stack, *new_node = *stack;
+	(void) line_number;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+		temp->next = new_node;
+		new_node->prev = temp;
+		new_node->next = NULL;
+	}
+
+}
