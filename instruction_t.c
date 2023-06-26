@@ -21,6 +21,7 @@ instruction_t *_instructions(void)
 		{"pchar", _pchar},
 		{"pstr", _pstr},
 		{"rotl", _rotl},
+		{"rotr", _rotr},
 		{NULL, NULL}
 	};
 	return (array);
